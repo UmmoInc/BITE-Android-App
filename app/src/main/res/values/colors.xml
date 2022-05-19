@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#29b6f6</color>
+    <color name="colorPrimaryDark">#0086c3</color>
+    <color name="colorAccent">#ae35e0</color>
+    <color name="White">#ffffff</color>
+    <color name="Grey">#a6a3a4</color>
+    <color name="UmmoPurple">#a300c3</color>
+    <color name="black">#000000</color>
+    <color name="UmmoPictonBlue">#29b6f6</color>
+    <color name="linkWhite">#d8e5f1</color>
+
+    <color name="normalTextColor">#000000</color>
+    <color name= "listedProviderBackground">#ffffff</color>
+    <color name= "catergoryBackground">#faf8f8</color>
+
+    <color name="ummo_1">#ae35e0</color>
+    <color name="ummo_2">#0086c3</color>
+    <color name="ummo_3">#29b6f6</color>
+    <color name="ummo_4">#73e8ff</color>
+    <color name="appleWhite">#d6ecff</color>
+    <color name="screenWhite">#eeeeee</color>
+
+    <color name="yellow">#ffff00</color>
+    <color name="gold">#ffd700</color>
+
+    <color name="red">#ff0000</color>
+    <color name="orange_red">#ff4500</color>
+
+    <color name="lawn_green">#7cfc00</color>
+    <color name="green">#4CAF50</color>
+
+    <color name="dim_gray">#696969</color>
+    <color name="slate_gray">#708090</color>
+
+    <color name="greyProfile">#a6a3a4</color>
+    <color name="dim_color">#cc000000</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color">#0086c3</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+    </array>
+
+</resources>

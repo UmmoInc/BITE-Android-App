@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_navigation_home"
+        android:icon="@drawable/ic_we_gov_24"
+        android:title="@string/home_nav_title" />
+
+    <item
+        android:id="@+id/bottom_navigation_search"
+        android:icon="@drawable/ic_manage_search_24"
+        android:title="@string/search" />
+
+    <item
+        android:id="@+id/bottom_navigation_delegates"
+        android:icon="@drawable/ic_tfuma_24"
+        android:title="@string/bottom_nav_delegated" />
+
+    <!--<item
+        android:id="@+id/bottom_navigation_service"
+        android:icon="@drawable/ic_bookmarks_24_icon"
+        android:title="@string/service_nav_title" />-->
+
+    <item
+        android:id="@+id/bottom_navigation_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/profile_nav_title" />
+
+</menu>

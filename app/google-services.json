@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "659740891716",
+    "project_id": "ummo-bite",
+    "storage_bucket": "ummo-bite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659740891716:android:0cd993c7e351ca2b7d7a11",
+        "android_client_info": {
+          "package_name": "xyz.ummo.bite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659740891716-5tc726idrar5htbitkvv5ekachjaoglv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.ummo.bite",
+            "certificate_hash": "10960247d734577a2b1490a9559e46336c2db0b9"
+          }
+        },
+        {
+          "client_id": "659740891716-fjanagm7slkikh9gtmdaoe3fior8tt6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8msJEKFekD0vZJ_LIzTbSERAGTKgxffU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659740891716-fjanagm7slkikh9gtmdaoe3fior8tt6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

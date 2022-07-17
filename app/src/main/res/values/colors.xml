@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#29b6f6</color>
-    <color name="colorPrimaryDark">#0086c3</color>
-    <color name="colorAccent">#ae35e0</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="textColorPrimary">#442C2E</color>
+    <color name="textInputOutlineColor">#FBB8AC</color>
+    <color name="colorPrimary">#E0E0E0</color>
+    <color name="colorPrimaryDark">#FBB8AC</color>
+    <color name="colorAccent">#FEDBD0</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name ="Main">#009688</color>
+    <color name ="optional">#00897B</color>
+    <color name ="Secondary">#4DD0E1</color>
+    <color name="redWarning">#F81302</color>
+    <color name ="boxOutlineStartColor">#87ceeb</color>
+    <color name = "boxOutlineCenterColor" >#00bfff</color>
+    <color name = "boxOutlineEndColor">#1e90ff</color>
+    <color name="blueliketwitter" >#1DA1F2</color>
+
+
+    <!--  from ummo-user-->
+
+
+    <color name="colorPrimaryUmmoB">#29b6f6</color>
+    <color name="colorPrimaryDarkUmmoB">#0086c3</color>
+    <color name="colorAccentUmmoB">#ae35e0</color>
     <color name="White">#ffffff</color>
     <color name="Grey">#a6a3a4</color>
     <color name="UmmoPurple">#a300c3</color>
@@ -11,8 +37,8 @@
     <color name="linkWhite">#d8e5f1</color>
 
     <color name="normalTextColor">#000000</color>
-    <color name= "listedProviderBackground">#ffffff</color>
-    <color name= "catergoryBackground">#faf8f8</color>
+    <color name="listedProviderBackground">#ffffff</color>
+    <color name="catergoryBackground">#faf8f8</color>
 
     <color name="ummo_1">#ae35e0</color>
     <color name="ummo_2">#0086c3</color>
@@ -20,6 +46,9 @@
     <color name="ummo_4">#73e8ff</color>
     <color name="appleWhite">#d6ecff</color>
     <color name="screenWhite">#eeeeee</color>
+
+    <color name="ummo_dine_green">#59bd5a</color>
+    <color name="ummo_dine_black">#262626</color>
 
     <color name="yellow">#ffff00</color>
     <color name="gold">#ffd700</color>
@@ -59,5 +88,8 @@
         <item>@color/dot_dark_screen2</item>
         <item>@color/dot_dark_screen3</item>
     </array>
+
+
+
 
 </resources>

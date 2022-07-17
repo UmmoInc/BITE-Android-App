@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".signup.OTPFragment"
+    android:background="@color/loginPageBackgroundColor">
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar_otp"
+            style="@style/Widget.UmmoBite.Toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="16dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/ummo_logo"
+                app:srcCompat="@drawable/ummo_logo" />
+
+
+            <TextView
+                android:id="@+id/otp_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="40dp"
+                android:text="Enter OTP"
+                android:fontFamily="@font/alef"
+                android:textAppearance="@style/TextAppearance.UmmoBite.Title" />
+
+            <TextView
+                android:id="@+id/otp_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:text="@string/otp_prompt"
+                android:textColor="@color/textColorPrimary"/>
+
+            <TextView
+                android:id="@+id/otp_subtitle_usermobile"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:text="************"
+                android:textColor="@color/textColorPrimary"/>
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:id="@+id/sms_intaker"
+             android:layout_gravity="center">
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input1"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text1"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input2"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/otp_text_input1"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text2"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+
+
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input3"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/otp_text_input2"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text3"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input4"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/otp_text_input3"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text4"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input5"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/otp_text_input4"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text5"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:id="@+id/otp_text_input6"
+                 style="@style/Widget.UmmoBite.TextInputLayout"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/otp_text_input5"
+                 app:layout_constraintHorizontal_weight="1"
+                 app:errorEnabled="true">
+
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/otp_edit_text6"
+                     android:textColorHint="@color/black"
+                     android:textColor="@color/black"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:inputType="numberDecimal" />
+             </com.google.android.material.textfield.TextInputLayout>
+
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</FrameLayout>

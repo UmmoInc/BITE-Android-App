@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/fragment_food_item_bottom_sheet">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- Layout displayed when there is a service under delegation-->
+            <RelativeLayout
+                android:id="@+id/food_item_info_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <!-- [START] Food Size Choices CardView -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/food_item_info_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/White"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:id="@+id/food_item_info_main_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Header Layout-->
+                        <RelativeLayout
+                            android:id="@+id/food_item_info_header_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:id="@+id/food_item_info_header_title_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/rubik"
+                                android:text="French Fries"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/food_item_info_description_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/food_item_info_header_title_text_view"
+                                android:fontFamily="@font/rubik"
+                                android:text="Enjoy these seasoned, crispy french fries"
+                                android:textColor="#555"
+                                android:textSize="14sp" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/divider_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/food_item_info_header_layout"
+                            android:layout_marginTop="5dp"
+                            android:background="?android:attr/listDivider"
+                            android:padding="20dp" />
+
+                        <!-- Body Layout-->
+                        <RelativeLayout
+                            android:id="@+id/food_item_info_body_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider_1">
+
+                            <!--Food Item Portion Layout Start-->
+                            <RelativeLayout
+                                android:id="@+id/food_item_info_portion_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginBottom="4dp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true">
+
+                                    <TextView
+                                        android:id="@+id/food_item_info_portion_header_text_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/rubik"
+                                        android:text="Select Portion"
+                                        android:textColor="#333"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/food_item_portion_instruction_text_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/food_item_info_portion_header_text_view"
+                                        android:layout_marginTop="0dp"
+                                        android:fontFamily="@font/rubik"
+                                        android:text="Pick 1"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/warning_required_relative_layout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true">
+
+                                        <ImageView
+                                            android:id="@+id/warning_required_image_view"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:layout_marginBottom="8dp"
+                                            app:srcCompat="@drawable/ic_round_warning_amber_24" />
+
+                                        <TextView
+                                            android:id="@+id/warning_required_text_view"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_toEndOf="@+id/warning_required_image_view"
+                                            android:fontFamily="@font/rubik"
+                                            android:text="Required"
+                                            android:textColor="@color/black"
+                                            android:textSize="10sp"
+                                            tools:ignore="SmallSp" />
+                                    </RelativeLayout>
+
+                                    <RadioGroup
+                                        android:id="@+id/food_portions_radio_group"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/food_item_portion_instruction_text_view"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:orientation="vertical" />
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                            <!--ProductModel Description Layout End-->
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <!-- [END] Food Size Choices CardView -->
+
+                <!-- [START] Food Extras CardView -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/food_item_extras_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/food_item_info_card_view"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/White"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:id="@+id/food_item_info_recommended_extras_main_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--Food Item Portion Layout Start-->
+                        <RelativeLayout
+                            android:id="@+id/food_item_info_recommended_extras_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/food_item_info_recommended_extras_header_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/rubik"
+                                android:text="Recommended Extras"
+                                android:textColor="#333"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/food_item_info_recommended_extras_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/food_item_info_recommended_extras_header_text_view"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/rubik"
+                                android:text="Pick up to 3"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <RelativeLayout
+                                android:id="@+id/optional_relative_layout_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:id="@+id/optional_text_view_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="0dp"
+                                    android:fontFamily="@font/rubik"
+                                    android:text="Optional"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/food_extras_linear_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/food_item_info_recommended_extras_text_view"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:orientation="vertical" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <!-- [END] Food Extras CardView -->
+
+                <!-- [START] Food Recommended Drinks CardView -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/food_item_recommended_drinks_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/food_item_extras_card_view"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/White"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp">
+
+                    <!-- Header Layout-->
+                    <RelativeLayout
+                        android:id="@+id/food_item_recommended_drinks_main_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:id="@+id/food_item_recommended_drinks_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/rubik"
+                            android:text="Recommended Drinks"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/food_item_recommended_drinks_instruction_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/food_item_recommended_drinks_text_view"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/rubik"
+                            android:text="Pick up to 3"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <RelativeLayout
+                            android:id="@+id/optional_relative_layout_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:layout_alignParentEnd="true">
+
+                            <TextView
+                                android:id="@+id/optional_text_view_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/rubik"
+                                android:text="Optional"
+                                android:textColor="@color/black"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/food_item_recommended_drinks_linear_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/food_item_recommended_drinks_instruction_text_view"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="vertical" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <!-- [END] Food Extras CardView -->
+
+                <!-- [START] Food Preferences CardView -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/food_item_preferences_sides_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/food_item_recommended_drinks_card_view"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/White"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:id="@+id/food_item_preferences_main_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Header Layout-->
+                        <RelativeLayout
+                            android:id="@+id/food_item_preferences_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:id="@+id/food_item_preferences_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/rubik"
+                                android:text="Preferences"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/food_item_preferences_instruction_text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/food_item_preferences_text_view"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/rubik"
+                                android:text="Add Special Instructions"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <RelativeLayout
+                                android:id="@+id/optional_relative_layout_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:id="@+id/optional_text_view_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="0dp"
+                                    android:fontFamily="@font/rubik"
+                                    android:text="Optional"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+                            </RelativeLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/food_item_preferences_text_layout"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/food_item_preferences_instruction_text_view"
+                                android:background="@color/White"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                app:boxStrokeColor="@color/ummo_2"
+                                app:endIconMode="clear_text"
+                                app:hintTextColor="@color/ummo_2"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/food_item_preferences_text_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:fontFamily="@font/rubik"
+                                    android:hint="Let us know what you prefer"
+                                    android:lines="1"
+                                    android:textColorHint="@color/ummo_2"
+                                    android:textCursorDrawable="@drawable/cursor"
+                                    android:textSize="12sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <!-- [END] Food Extras CardView -->
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginPageBackgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.DinersFragmentTabbed">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/diner_screen_app_bar"
+            layout="@layout/diner_screen_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--<com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/dine_tabbed_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            app:title="Ummo Food Court"
+            app:titleTextColor="@android:color/holo_red_dark" />-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/dine_tab_layout"
+            style="@style/DineTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diner_screen_app_bar"
+            app:tabBackground="@color/White"
+            app:tabGravity="fill"
+            app:tabIconTint="@color/ummo_dine_green"
+            app:tabInlineLabel="true"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@style/DineTabTextAppearance"
+            app:tabTextColor="@color/ummo_dine_black" />
+        <!--</com.google.android.material.appbar.AppBarLayout>-->
+
+        <!-- Default specification for tab-layouts = 48dp-->
+        <!-- Default specification for bottomNav-layouts = 56dp-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/dine_tabs_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dine_tab_layout"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
+
+</FrameLayout>

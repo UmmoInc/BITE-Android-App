@@ -18,6 +18,9 @@
           "client_type": 1,
           "android_info": {
             "package_name": "xyz.ummo.bite",
+
+
+
             "certificate_hash": "10960247d734577a2b1490a9559e46336c2db0b9"
           }
         },

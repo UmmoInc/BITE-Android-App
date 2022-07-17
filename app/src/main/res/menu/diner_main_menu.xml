@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/diner_feedback_icon"
+        android:icon="@drawable/diner_message_icon"
+        android:title="@string/feedback"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/diner_user_support"
+        android:icon="@drawable/ic_diner_support_24"
+        android:title="@string/support"
+        app:showAsAction="always" />
+</menu>

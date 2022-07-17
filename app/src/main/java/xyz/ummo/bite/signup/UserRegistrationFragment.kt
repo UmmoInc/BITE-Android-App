@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.play.core.integrity.IntegrityManagerFactory
+import com.google.android.play.core.integrity.IntegrityTokenRequest
+import com.google.android.play.core.integrity.IntegrityTokenResponse
 import timber.log.Timber
 import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentUserRegistrationBinding
@@ -115,8 +119,6 @@ private fun inputValidator(name :TextInputEditText,surname:TextInputEditText,
         }
 
      }
-
-
 
 
     }

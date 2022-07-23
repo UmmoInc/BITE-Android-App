@@ -25,7 +25,7 @@
     <string name="password_recover_prompt">It\'s no real fuss just supply the \n the address associated with your account</string>
     <string name="resetpassword">Reset \n Password</string>
     <string name="new_password">New Password</string>
-    <string name="otp_prompt">A 4 digit pin has been sent to</string>
+    <string name="otp_prompt">A 6 digit pin has been sent to</string>
 
 
     <!--  from ummo user -->
@@ -41,5 +41,7 @@
     <string name="description_dinertabbed">diner viewpager</string>
     <string name="viewpager_tabs_description">"vaiew pager title description "</string>
     <string name="ummo_logo_text">Ummo Logo</string>
+    <string name="phoneauth_bottomsheet">
+    Ooops... It seems sms code doesn\'t match \n what would like to do</string>
 
 </resources>

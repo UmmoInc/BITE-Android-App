@@ -113,13 +113,16 @@ android:layout_marginTop="56dp">
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-
+ android:id="@+id/password_textinput"
             style="@style/Widget.UmmoBite.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/textColorPrimary"
             android:hint="@string/hint_password"
             app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:endIconDrawable="@drawable/password_icon"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/blueliketwitter"
             app:startIconTint="@color/blueliketwitter"
             app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
@@ -144,7 +147,7 @@ android:layout_marginTop="56dp">
                 android:id="@+id/registration_name"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
-                android:inputType="text"
+                android:inputType="textCapSentences"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,7 +167,7 @@ android:layout_marginTop="56dp">
                 android:id="@+id/registration_surname"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
-                android:inputType="text"
+                android:inputType="textCapSentences"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 

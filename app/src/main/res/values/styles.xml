@@ -299,7 +299,14 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
+  <style name = "Widget.UmmoBite.PhoneAuthBottomSheet.title" parent ="">
+      <item name ="android:textColor">@color/white</item>
+      <item name= "android:fontFamily">@font/alef</item>
+      <item name="android:textAlignment">center</item>
+      <item name = "android:padding">25dp</item>
+      <item name ="android:textSize">16sp</item>
 
+  </style>
 
 
 </resources>

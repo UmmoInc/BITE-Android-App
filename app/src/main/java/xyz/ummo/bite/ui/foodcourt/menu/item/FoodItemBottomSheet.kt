@@ -51,8 +51,6 @@ private val  binding get()=_binding!!
 
 
 
-
-
     companion object {
 
         const val TAG = "FoodItemInfoBottomSheet"

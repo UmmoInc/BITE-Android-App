@@ -38,10 +38,13 @@
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/ic_person_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/ic_round_person_black_24.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/ic_twotone_hourglass_top_24.xml" value="0.1" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/password_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/password_visibilty.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/drawable/swazi_phone.xml" value="0.1905" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/font/fonts.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/font/title_font.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/activity_register.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/content_food_item_info.xml" value="0.1859375" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/diner_screen_app_bar.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/food_court_fragment.xml" value="0.1" />
@@ -62,19 +65,28 @@
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_mainscreen.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_o_t_p.xml" value="0.33" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_order_tracker.xml" value="0.1" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_phone_auth_bottom_sheet.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_reset_password.xml" value="0.22" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_sign_in.xml" value="0.14" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_snack_bar.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_snack_bar2.xml" value="0.1859375" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_splash_screen.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_splash_screen_to_menu.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_splash_screen_to_o_t_p.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_track_order.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/fragment_user_registration.xml" value="0.25" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/ic_baseline_star_24.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/mainscreen.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/order_screen_app_bar.xml" value="0.1859375" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/layout/phoneauthsnackbar_layout.xml" value="0.5" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/activity_main_screen_drawer.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/diner_main_menu.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/main_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/menu.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/menu_detailed.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/navigation.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/order_tracker_menu.xml" value="0.1859375" />
       </map>
     </option>

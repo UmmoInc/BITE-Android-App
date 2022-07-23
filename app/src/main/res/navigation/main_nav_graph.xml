@@ -39,7 +39,6 @@
             android:id="@+id/action_OTPFragment_to_userRegistrationFragment"
             app:destination="@id/userRegistrationFragment"
             app:popEnterAnim="@anim/slide_in_right"
-
             app:popExitAnim="@anim/slide_out_left"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -49,6 +48,18 @@
             android:id="@+id/action_OTPFragment_to_splashScreenToMenu"
             app:destination="@id/splashScreenToMenu"
        />
+        <action
+            android:id="@+id/action_OTPFragment_to_splashScreenToOTP"
+            app:destination="@id/splashScreenToOTP" />
+        <argument
+            android:name="verificationID"
+            app:argType="string" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
 
     </fragment>
     <fragment
@@ -92,14 +103,14 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
-            android:id="@+id/action_userRegistrationFragment_to_OTPFragment"
-            app:destination="@id/OTPFragment"
+            android:id="@+id/action_userRegistrationFragment_to_splashScreenOTPFragment"
+            app:destination="@id/splashScreenToOTP"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/OTPFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/userRegistrationFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
@@ -211,4 +222,26 @@
             app:popUpTo="@id/signInFragment"
             />
     </fragment>
+    <fragment
+        android:id="@+id/splashScreenToOTP"
+        android:name="xyz.ummo.bite.SplashScreenToOTP"
+        android:label="fragment_splash_screen_to_o_t_p"
+        tools:layout="@layout/fragment_splash_screen_to_o_t_p" >
+        <action
+            android:id="@+id/action_splashScreenToOTP_to_OTPFragment"
+            app:destination="@id/OTPFragment"
+            app:popUpTo="@id/userRegistrationFragment"/>
+        <action
+            android:id="@+id/action_splashScreenToOTP_to_userRegistrationFragment"
+            app:destination="@id/userRegistrationFragment" />
+        <action
+            android:id="@+id/action_splashScreenToOTP_to_splashScreenToMenu2"
+            app:destination="@id/splashScreenToMenu" />
+
+    </fragment>
+    <dialog
+        android:id="@+id/phoneAuthBottomSheet"
+        android:name="xyz.ummo.bite.signup.phoneauth.phoneAuthBottomSheet"
+        android:label="fragment_phone_auth_bottom_sheet"
+        tools:layout="@layout/fragment_phone_auth_bottom_sheet" />
 </navigation>

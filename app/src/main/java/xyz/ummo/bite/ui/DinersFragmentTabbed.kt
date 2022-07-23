@@ -11,8 +11,9 @@ import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentDinersTabbedBinding
 import xyz.ummo.bite.adapters.PagesViewPagerAdapter
 import xyz.ummo.bite.ui.foodcourt.FoodCourtFragment
+import xyz.ummo.bite.ui.foodcourt.cart.snackbar.SnackBarFragment
 import xyz.ummo.bite.ui.foodcourt.drinkingwell.DrinkingWellFragment
-import xyz.ummo.bite.ui.foodcourt.snackbar.SnackBarFragment
+
 
 class DinersFragmentTabbed : Fragment() {
     private lateinit var toolbar: MaterialToolbar

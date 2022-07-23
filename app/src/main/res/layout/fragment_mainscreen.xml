@@ -17,6 +17,7 @@
 
 
         <FrameLayout
+            android:background="@color/loginPageBackgroundColor"
             android:id="@+id/mainscreen_frame"
             android:layout_height="match_parent"
             android:layout_width="match_parent"

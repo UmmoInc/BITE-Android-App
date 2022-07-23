@@ -1,17 +1,16 @@
 package xyz.ummo.bite.ui
 
 import android.os.Bundle
+import android.os.SystemClock.sleep
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentSplashScreenToMenuBinding
+import xyz.ummo.bite.main.MainActivity
 import xyz.ummo.bite.utils.constants.Constants
 
 
@@ -30,16 +29,20 @@ class SplashScreenToJoints : Fragment() {
         return rootView
 
     }
+    /// this function opens the mainscreen fragment
         private fun moveToNexFragment(){
         var job : Job?= null
         job = MainScope().launch {
-            delay(Constants.TOMENUFRAGMENT_SPLASHSCREEN_WAIT_TIME)
+
+            // use sleep instead of delay to avoid error crash when user clicks back
+            //while splashscreen fragment is loaded
+            sleep(Constants.TOMENUFRAGMENT_SPLASHSCREEN_WAIT_TIME)
             navigationController()
         }
     }
 
     private fun navigationController() {
-        val navHostFragment = requireActivity().supportFragmentManager.findFragmentById(
+        val navHostFragment = (requireActivity()).supportFragmentManager.findFragmentById(
             R.id.NavHostFragment
         ) as NavHostFragment
         val   navController = navHostFragment.navController

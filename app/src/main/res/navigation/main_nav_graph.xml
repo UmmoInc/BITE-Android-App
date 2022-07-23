@@ -50,7 +50,9 @@
        />
         <action
             android:id="@+id/action_OTPFragment_to_splashScreenToOTP"
-            app:destination="@id/splashScreenToOTP" />
+            app:destination="@id/splashScreenToOTP"
+            app:popUpTo="@id/OTPFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="verificationID"
             app:argType="string" />
@@ -236,7 +238,9 @@
             app:destination="@id/userRegistrationFragment" />
         <action
             android:id="@+id/action_splashScreenToOTP_to_splashScreenToMenu2"
-            app:destination="@id/splashScreenToMenu" />
+            app:destination="@id/splashScreenToMenu"
+            app:popUpTo="@id/splashScreenToOTP"
+            app:popUpToInclusive="true" />
 
     </fragment>
     <dialog

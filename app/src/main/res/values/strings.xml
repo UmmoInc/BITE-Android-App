@@ -42,6 +42,6 @@
     <string name="viewpager_tabs_description">"vaiew pager title description "</string>
     <string name="ummo_logo_text">Ummo Logo</string>
     <string name="phoneauth_bottomsheet">
-    Ooops... It seems sms code doesn\'t match \n what would like to do</string>
+    Ooops... It seems sms code doesn\'t match \n what would you like  to do</string>
 
 </resources>

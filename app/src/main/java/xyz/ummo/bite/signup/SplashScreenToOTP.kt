@@ -1,6 +1,7 @@
 package xyz.ummo.bite
 
 import android.os.Bundle
+import android.os.SystemClock.sleep
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,7 +17,6 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import xyz.ummo.bite.databinding.FragmentSplashScreenToOTPBinding
-import xyz.ummo.bite.signup.OTPFragmentDirections
 import xyz.ummo.bite.utils.constants.Constants
 import java.util.concurrent.TimeUnit
 
@@ -36,14 +36,11 @@ private val binding get() =_binding
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-_binding = FragmentSplashScreenToOTPBinding.inflate(inflater, container,false)
+        _binding = FragmentSplashScreenToOTPBinding.inflate(inflater, container,false)
         rootView=binding.root
         auth = FirebaseAuth.getInstance()
-
         phoneNumber =arguments?.getString("phone_key").toString()
-
-
-    phoneAuth()
+        phoneAuth()
 
         return rootView
 
@@ -51,7 +48,9 @@ _binding = FragmentSplashScreenToOTPBinding.inflate(inflater, container,false)
     private fun moveToOTPFragment(){
         var job : Job?= null// background thread to delay transition SplashScreen->OTPFragment
         job = MainScope().launch {
-            delay(Constants.TOMENUFROM_OTP_SPLASHSCREEN_WAIT_TIME)
+// use sleep instead of delay to avoid error crah when user clicks back
+            //while splashscreen fragment is loaded
+            sleep(Constants.TOMENUFROM_OTP_SPLASHSCREEN_WAIT_TIME)
             navigationController()
         }
     }
@@ -65,9 +64,6 @@ _binding = FragmentSplashScreenToOTPBinding.inflate(inflater, container,false)
         ,phoneNumber))
 
     }
-
-
-
     private fun phoneAuth() {
         val   callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
@@ -109,6 +105,7 @@ _binding = FragmentSplashScreenToOTPBinding.inflate(inflater, container,false)
                 // Save verification ID and resending token so we can use them later
                 storedVerificationId = verificationId
                 resendToken = token
+                // MOVE TO OTP fragment where sms code will be collected and firebase signin completed
                 moveToOTPFragment()
 
             }

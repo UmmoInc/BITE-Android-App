@@ -61,8 +61,8 @@ class OTPFragment : Fragment() {
         phoneNumber =args.phoneNumber.trim()
         auth = FirebaseAuth.getInstance()
         setNavigationUplistener()
-        setonCodeSentvariables()
         CreateTextBoxAutoFocusFeature()
+
 
         return rootview
     }
@@ -174,7 +174,6 @@ signInPhoneNumberWithSMSCode(SMS_String)
                 otpEditText5.id,
                 otpEditText6.id
             )
-
 
             for (id in array) {
 

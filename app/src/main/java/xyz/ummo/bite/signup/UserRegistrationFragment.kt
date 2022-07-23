@@ -1,4 +1,5 @@
 package xyz.ummo.bite.signup
+
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -139,8 +140,8 @@ class UserRegistrationFragment : Fragment() {
             //Check if Phone number is valid
             if (isPhoneValid(binding.registrationMomoPhone)) {
 
-              checkIfEmailisValid()
-             // moveToOTPfragment()
+                checkIfEmailisValid()
+                // moveToOTPfragment()
 
             } else {// pin invalid
                 binding.registrationMomoPhone.isFocusable = true
@@ -167,12 +168,13 @@ class UserRegistrationFragment : Fragment() {
                 emailField.error = "Please provide an email..."
                 emailField.requestFocus()
             }
-             else->{
-                 moveToOTPfragment()
-             }
+            else -> {
+                moveToOTPfragment()
+            }
         }
     }
-    private fun moveToOTPfragment(){
+
+    private fun moveToOTPfragment() {
 
 
         // GET SUPPLIED PHONE NUMBER

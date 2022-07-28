@@ -1,4 +1,4 @@
-package xyz.ummo.bite.signup
+package xyz.ummo.bite.ui.signup
 
 import android.os.Build
 import android.os.Bundle
@@ -12,11 +12,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.play.core.integrity.IntegrityManagerFactory
-import com.google.android.play.core.integrity.IntegrityTokenRequest
-import com.google.android.play.core.integrity.IntegrityTokenResponse
 import timber.log.Timber
 import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentUserRegistrationBinding
@@ -24,7 +20,7 @@ import xyz.ummo.bite.utils.constants.Constants.Companion.CHARACTER_COUNT_PHONE
 
 class UserRegistrationFragment : Fragment() {
     private lateinit var _binding: FragmentUserRegistrationBinding
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private lateinit var mBundle: Bundle
     private lateinit var rootView: View
     private var passwordEndIconChangeHelper = true
@@ -42,11 +38,9 @@ class UserRegistrationFragment : Fragment() {
         navigationControls()
         //  setupPasswordTextinput()
 
-        binding.submitBtn.setOnClickListener(View.OnClickListener {
+        binding.submitBtn.setOnClickListener {
             checkIfAllTextboxesFilled()
-
-
-        })
+        }
         return rootView
     }
 
@@ -54,16 +48,14 @@ class UserRegistrationFragment : Fragment() {
         binding.apply {
 
             passwordTextinput.setEndIconOnClickListener {
-                if (passwordEndIconChangeHelper) {
+                passwordEndIconChangeHelper = if (passwordEndIconChangeHelper) {
                     passwordTextinput.setEndIconDrawable(R.drawable.password_visibilty)
-                    passwordEndIconChangeHelper = false
+                    false
                 } else {
                     passwordTextinput.setEndIconDrawable(R.drawable.password_visibilty_off)
-                    passwordEndIconChangeHelper = true
+                    true
                 }
             }
-
-
         }
     }
 
@@ -73,8 +65,6 @@ class UserRegistrationFragment : Fragment() {
         binding.logInText.setOnClickListener(View.OnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_userRegistrationFragment_to_signInFragment)
-
-
         })
 
         binding.appBar.setNavigationOnClickListener(View.OnClickListener {
@@ -104,11 +94,9 @@ class UserRegistrationFragment : Fragment() {
 
     }
 
-
     private fun isPhoneValid(text: TextInputEditText?): Boolean {
         return text != null && text.length() == CHARACTER_COUNT_PHONE
     }
-
 
     private fun termsAndConditions() {
         binding.legalTerms.isClickable = true
@@ -124,8 +112,6 @@ class UserRegistrationFragment : Fragment() {
             binding.legalTerms.text = Html.fromHtml(legalTerms)
             Timber.e("NOT USING HTML FLAG")
         }
-
-
     }
 
     private fun checkIfAllTextboxesFilled() {
@@ -150,8 +136,6 @@ class UserRegistrationFragment : Fragment() {
         } else {
             Toast.makeText(requireContext(), "Please fill in all fields ", Toast.LENGTH_SHORT)
                 .show()
-
-
         }
     }
 
@@ -176,13 +160,11 @@ class UserRegistrationFragment : Fragment() {
 
     private fun moveToOTPfragment() {
 
-
         // GET SUPPLIED PHONE NUMBER
         val phone = binding.registrationMomoPhone.text.toString()
         mBundle.putString("phone_key", "+268$phone")
         // navigate to OTP fragment : prepare  verify user
         Navigation.findNavController(rootView)
             .navigate(R.id.action_userRegistrationFragment_to_splashScreenOTPFragment, mBundle)
-
     }
 }

@@ -5,17 +5,21 @@
     android:layout_height="match_parent"
     android:background="@color/DarkGrey"
     android:id="@+id/phoneauth_bottomsheet_container"
-    tools:context=".signup.phoneauth.phoneAuthBottomSheet">
- <LinearLayout android:layout_height="wrap_content"
-     android:layout_width="match_parent"
-     android:orientation="vertical">
-     <TextView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         style="@style/Widget.UmmoBite.PhoneAuthBottomSheet.title"
-         android:text="@string/phoneauth_bottomsheet"
-         android:id="@+id/phoneAuth_bottomsheet_title" />
-     <RelativeLayout
+    tools:context=".ui.signup.phoneauth.phoneAuthBottomSheet">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.UmmoBite.PhoneAuthBottomSheet.title"
+            android:text="@string/phoneauth_bottomsheet"
+            android:id="@+id/phoneAuth_bottomsheet_title" />
+
+        <RelativeLayout
          android:layout_height="wrap_content"
          android:layout_width="match_parent"
          android:paddingEnd="20dp"

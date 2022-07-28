@@ -1,23 +1,21 @@
-package xyz.ummo.bite.signup.phoneauth
+package xyz.ummo.bite.ui.signup.phoneauth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import xyz.ummo.bite.R
-import xyz.ummo.bite.databinding.FragmentFoodItemBottomSheetBinding
 import xyz.ummo.bite.databinding.FragmentPhoneAuthBottomSheetBinding
 
 
 class phoneAuthBottomSheet : BottomSheetDialogFragment() {
 
 
-    private lateinit var  _binding: FragmentPhoneAuthBottomSheetBinding
-    private val  binding get()=_binding!!
-    private lateinit var  rootView: View
+    private lateinit var _binding: FragmentPhoneAuthBottomSheetBinding
+    private val binding get() = _binding
+    private lateinit var rootView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

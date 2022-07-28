@@ -1,4 +1,4 @@
-package xyz.ummo.bite.signup;
+package xyz.ummo.bite.ui.signup;
 
 import android.os.Parcel;
 import android.os.Parcelable;

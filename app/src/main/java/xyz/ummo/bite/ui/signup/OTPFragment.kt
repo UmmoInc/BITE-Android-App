@@ -1,4 +1,4 @@
-package xyz.ummo.bite.signup
+package xyz.ummo.bite.ui.signup
 
 
 
@@ -6,32 +6,25 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.transition.TransitionManager
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
-import com.google.firebase.auth.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
-
-
 import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentOTPBinding
 import xyz.ummo.bite.main.MainActivity
-
-
-import xyz.ummo.bite.signup.phoneauth.phoneAuthBottomSheet
-
+import xyz.ummo.bite.ui.signup.phoneauth.phoneAuthBottomSheet
 import xyz.ummo.bite.utils.eventBusClasses.otpEntered
-import java.util.concurrent.TimeUnit
 
 
 private var motpEntered=otpEntered(false)
@@ -39,8 +32,8 @@ private var motpEntered=otpEntered(false)
 class OTPFragment : Fragment() {
 
     private lateinit var _binding: FragmentOTPBinding
-    private val binding get() = _binding!!
-    private var   storedVerificationId: String? = "default"
+    private val binding get() = _binding
+    private var storedVerificationId: String? = "default"
     private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
     private lateinit var phoneNumber : String
     private lateinit var rootview:View
@@ -207,7 +200,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     TransitionManager.beginDelayedTransition(rootview as ViewGroup)
                                     rootview.findViewById<TextInputEditText>(array[1] as Int)
                                         .requestFocus()
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     count++
                                 }
                             }
@@ -244,7 +237,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     TransitionManager.beginDelayedTransition(rootview as ViewGroup)
                                     rootview.findViewById<TextInputEditText>(array[2] as Int)
                                         .requestFocus()
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     count ++
                                 }
                             }
@@ -284,7 +277,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     TransitionManager.beginDelayedTransition(rootview as ViewGroup)
                                     rootview.findViewById<TextInputEditText>(array[3] as Int)
                                         .requestFocus()
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     count++
 
 
@@ -325,7 +318,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     TransitionManager.beginDelayedTransition(rootview as ViewGroup)
                                     rootview.findViewById<TextInputEditText>(array[4] as Int)
                                         .requestFocus()
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     count++
                                 }
                             }
@@ -363,7 +356,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     TransitionManager.beginDelayedTransition(rootview as ViewGroup)
                                     rootview.findViewById<TextInputEditText>(array[5] as Int)
                                         .requestFocus()
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     count++
                                 }
                             }
@@ -399,7 +392,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                     rootview.findViewById<TextInputEditText>(array[0] as Int)
                                         .requestFocus()
                                     count++
-                                    SMS_String+=s!!.toString()
+                                    SMS_String += s.toString()
                                     otpEnteredpublisher()
 
 

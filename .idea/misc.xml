@@ -88,6 +88,9 @@
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/menu_detailed.xml" value="0.17083333333333334" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/navigation.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/Magagula/AndroidStudioProjects/UmmoBite/app/src/main/res/menu/order_tracker_menu.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/fragment_bite_intro.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_user_registration.xml" value="0.33" />
       </map>
     </option>
   </component>

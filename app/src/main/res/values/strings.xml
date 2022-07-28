@@ -13,7 +13,7 @@
     <string name="hint_username">user name</string>
     <string name="don_t_have_an_account">"Don't have an account? "</string>
     <string name="register">Register</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="button_next">next</string>
     <string name="been_here_before">Been here before?</string>
     <string name="emailorphone">Email/Phone</string>
@@ -29,8 +29,6 @@
 
 
     <!--  from ummo user -->
-
-
     <string name="feedback">Feedback</string>
     <string name="support">Support</string>
     <string name="place_order">PLACE ORDER</string>
@@ -39,9 +37,15 @@
     <string name="bottom_nav_delegated">Delegated</string>
     <string name="home_nav_diner">Diner</string>
     <string name="description_dinertabbed">diner viewpager</string>
-    <string name="viewpager_tabs_description">"vaiew pager title description "</string>
+    <string name="viewpager_tabs_description">"view pager title description "</string>
     <string name="ummo_logo_text">Ummo Logo</string>
-    <string name="phoneauth_bottomsheet">
-    Ooops... It seems sms code doesn\'t match \n what would you like  to do</string>
+    <string name="phoneauth_bottomsheet">Ooops… It seems sms code doesn\'t match \n what would you like  to do</string>
+
+    <!-- Facebook String Resources -->
+    <string name="facebook_app_id">514661513810725</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">ade23f48417c936cff919b65441cab0f</string>
+
+    <string name="dev_server_url">https://bite-api-dev.herokuapp.com</string>
 
 </resources>

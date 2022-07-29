@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -13,9 +15,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
+import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
+
 import com.google.android.gms.tasks.Task
+import timber.log.Timber
+import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentLogInWithSocialsBinding
 import xyz.ummo.bite.utils.constants.Constants.Companion.RC_SIGN_IN
 import xyz.ummo.bite.utils.constants.Constants.Companion.SERVER_CLIENT_ID
@@ -51,22 +57,43 @@ private lateinit var      mGoogleSignInClient :GoogleSignInClient
        _binding = FragmentLogInWithSocialsBinding.inflate(inflater,container,false)
         rootView = binding.root
         setgooglesignInButton()
+        setsignoutButtonOnClick()
         return rootView
     }
+    private fun GooglesignOut(){
+        mGoogleSignInClient.signOut()
+            .addOnCompleteListener( {
+                fun onComplete(task: Task<Void?>) {
+                    Toast.makeText(requireContext(), "Signed Out", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+    }
+    private fun setsignoutButtonOnClick() {
+        binding.signOutButton.setOnClickListener(View.OnClickListener {
+            GooglesignOut()
+        })
+    }
+
     private fun GooglesignIn(){
         val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
         startActivityForResult(signInIntent,  RC_SIGN_IN)
 
 
     }
+
     private fun updateUI(account: GoogleSignInAccount?) {
 // move user to main screen -> do this later
 
         // for now  make a Toast
 if(account !=null) {
     Toast.makeText(requireActivity(), "User Already Signed In To Google", Toast.LENGTH_SHORT).show()
-}else {
-    Toast.makeText(requireActivity(), "No user signed in ", Toast.LENGTH_SHORT).show()
+binding.signOutButton.visibility= View.GONE
+
+    }
+else {
+binding.signOutButton.visibility=View.VISIBLE
+
 }
 
     }
@@ -94,8 +121,9 @@ GooglesignIn()
     private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
         try {
             val account: GoogleSignInAccount = task.getResult(ApiException::class.java)
-          //  val authCode = account.serverAuthCode
-
+            val authCode = account.serverAuthCode
+           Timber.e("authcode->$authCode")
+            Log.d("authcode:", "$authCode")
             // Signed in successfully, show authenticated UI.
             updateUI(account)
         } catch (e: ApiException) {
@@ -105,7 +133,6 @@ GooglesignIn()
             updateUI(null)
         }
     }
-
 
 
     override fun onStart(){
@@ -122,7 +149,5 @@ GooglesignIn()
          
      }
 
-
-
-}
+ }
 

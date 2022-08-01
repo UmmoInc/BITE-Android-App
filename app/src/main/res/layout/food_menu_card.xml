@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="1dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPaddingBottom="4dp"
+    app:contentPaddingTop="0dp"
+    app:strokeColor="@color/Grey"
+    app:strokeWidth="1dp"
+>
+
+    <RelativeLayout
+        android:id="@+id/root_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/card_content_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/food_item_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fries" />
+
+            <RelativeLayout
+                android:id="@+id/food_item_card_bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/food_item_image_view"
+                android:layout_marginTop="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/food_item_card_footer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="bottom"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/food_item_title_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="French Fries"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/food_item_favorite_unchecked_image_view"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignBottom="@+id/food_item_title_text_view"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:srcCompat="@drawable/ic_outline_favorite_border_24" />
+
+                    <TextView
+                        android:id="@+id/food_item_description_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/food_item_title_text_view"
+                        android:layout_marginStart="8dp"
+                        android:text="Indulge in these crunchy fries"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:id="@+id/divider_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/food_item_description_text_view"
+                        android:layout_marginTop="5dp"
+                        android:background="?android:attr/listDivider"
+                        android:padding="20dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/food_item_price_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider_1">
+
+                        <ImageView
+                            android:id="@+id/food_item_price_image_view"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            app:srcCompat="@drawable/ic_money_24" />
+
+                        <TextView
+                            android:id="@+id/bullet_breaker_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_toEndOf="@+id/food_item_price_image_view"
+                            android:text="•"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/food_item_price_range_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_toEndOf="@+id/bullet_breaker_1"
+                            android:fontFamily="@font/rubik"
+                            android:text="E10 - E50"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                    </RelativeLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/add_to_cart_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/food_item_price_linear_layout"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/ummo_dine_green"
+                        android:text="Add to Cart"
+                        android:textSize="10sp"
+                        app:icon="@drawable/ic_baseline_add_shopping_cart_24"
+                        app:iconGravity="textEnd"
+                        tools:ignore="SmallSp"
+                        tools:targetApi="lollipop" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

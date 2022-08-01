@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/dinersFragmentTabbed"
+            android:icon="@drawable/ic_fastfood_24_nav"
+            android:title="@string/home_nav_diner" />
+
+        <item
+            android:id="@+id/orderTracker2"
+            android:icon="@drawable/ic_baseline_receipt_24"
+            android:title="@string/bottom_nav_orders" />
+
+        <item
+            android:id="@+id/profileFragment2"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/profile_nav_title" />
+
+</menu>

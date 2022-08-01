@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         jcenter()
     }
 }
-rootProject.name = "BITE"
+rootProject.name = "UmmoBite"
 include ':app'

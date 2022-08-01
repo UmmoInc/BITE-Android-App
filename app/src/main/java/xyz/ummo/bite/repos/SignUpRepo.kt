@@ -6,14 +6,18 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
+import org.greenrobot.eventbus.EventBus
+import org.json.JSONException
 import org.json.JSONObject
 import timber.log.Timber
+import xyz.ummo.bite.utils.eventBusClasses.RegistrationCallbackEvent
 import java.io.IOException
 
 
 class SignUpRepo {
     private var client = OkHttpClient()
     private val user = JSONObject()
+    private val registrationCallbackEvent = RegistrationCallbackEvent()
 
     init {
     }
@@ -22,8 +26,8 @@ class SignUpRepo {
 
         val requestBody = userSignUpDetails.toString().toRequestBody(MEDIA_TYPE_JSON)
         val request = Request.Builder()
-            .url("https://bite-api-dev.herokuapp.com/auth/signup")/*.header("Content-Type", "application/json")*/
-//            .post(userSignUpDetails.toString().toRequestBody(MEDIA_TYPE_JSON))
+            .url("https://bite-api-dev.herokuapp.com/auth/signup")
+            .header("Content-Type", "application/json")
             .post(requestBody)
             .build()
 
@@ -36,9 +40,25 @@ class SignUpRepo {
         try {
             response = client.newCall(request).execute()
             val responseString = response.body!!.string()
-            Timber.e("RESPONSE STRING -> $responseString")
+            val responseCode = response.code
+            try {
+                if (responseCode == 201) {
+                    Timber.e("SIGN-IN SUCCESSFUL -> $responseString")
+                    registrationCallbackEvent.responseStatusCode = responseCode
+                    EventBus.getDefault().post(registrationCallbackEvent)
+                } else {
+                    val responseMessage = JSONObject(responseString).getString("message")
+                    registrationCallbackEvent.responseStatusCode = responseCode
+                    registrationCallbackEvent.responseStatusMessage = responseMessage
+                    EventBus.getDefault().post(registrationCallbackEvent)
+                    Timber.e("ISSUE DETECTED -> $responseString CODE -> $responseCode")
+                }
+            } catch (JSE: JSONException) {
+                throw JSE
+            }
         } catch (IOE: IOException) {
-            Timber.e("$IOE")
+            //TODO: Implement a UX handler for this exception
+            Timber.e("Exception $IOE")
         }
 
     }

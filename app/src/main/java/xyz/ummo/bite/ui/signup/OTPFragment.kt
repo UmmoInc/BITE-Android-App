@@ -24,10 +24,10 @@ import xyz.ummo.bite.R
 import xyz.ummo.bite.databinding.FragmentOTPBinding
 import xyz.ummo.bite.main.MainActivity
 import xyz.ummo.bite.ui.signup.phoneauth.phoneAuthBottomSheet
-import xyz.ummo.bite.utils.eventBusClasses.otpEntered
+import xyz.ummo.bite.utils.eventBusClasses.OTPEntered
 
 
-private var motpEntered=otpEntered(false)
+private var motpEntered = OTPEntered(false)
 
 class OTPFragment : Fragment() {
 
@@ -107,18 +107,19 @@ class OTPFragment : Fragment() {
     }
 
 
+    @Subscribe
+    fun checkIfSmsIsAvailable(event: OTPEntered) {
 
-@Subscribe
-fun checkIfSmsIsAvailable(event: otpEntered){
+        if (event.smsProvided == true) {
+            signInPhoneNumberWithSMSCode(SMS_String)
+        }
 
-    if (event.smsProvided == true){
-signInPhoneNumberWithSMSCode(SMS_String)
     }
 
-}
-    private fun signInPhoneNumberWithSMSCode(code: String){
+    private fun signInPhoneNumberWithSMSCode(code: String) {
         try {
-            val credential = PhoneAuthProvider.getCredential(storedVerificationId!!,
+            val credential = PhoneAuthProvider.getCredential(
+                storedVerificationId!!,
                 code
             )
    Log.d("credentialfromsms:","$code")
@@ -393,7 +394,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
                                         .requestFocus()
                                     count++
                                     SMS_String += s.toString()
-                                    otpEnteredpublisher()
+                                    otpEnteredPublisher()
 
 
                                 }
@@ -409,12 +410,13 @@ signInPhoneNumberWithSMSCode(SMS_String)
             }
         }
     }
+
     @Subscribe
-    private fun otpEnteredpublisher(){
-        if(count==6){
-            motpEntered= otpEntered(true)
-            EventBus.getDefault().post(motpEntered)}
-        else{
+    private fun otpEnteredPublisher() {
+        if (count == 6) {
+            motpEntered = OTPEntered(true)
+            EventBus.getDefault().post(motpEntered)
+        } else {
 
             Toast.makeText(requireContext(), "no", Toast.LENGTH_SHORT).show()
         }
@@ -432,7 +434,7 @@ signInPhoneNumberWithSMSCode(SMS_String)
     @Subscribe
     override fun onDestroy() {
 
-        motpEntered= otpEntered(false)
+        motpEntered = OTPEntered(false)
         EventBus.getDefault().post(motpEntered)
         super.onDestroy()
     }

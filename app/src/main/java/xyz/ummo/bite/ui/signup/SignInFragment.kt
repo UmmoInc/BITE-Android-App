@@ -21,7 +21,6 @@ import xyz.ummo.bite.databinding.FragmentSignInBinding
 import xyz.ummo.bite.repos.SignUpRepo
 import java.io.IOException
 
-
 class SignInFragment : Fragment() {
 
     private lateinit var _binding: FragmentSignInBinding

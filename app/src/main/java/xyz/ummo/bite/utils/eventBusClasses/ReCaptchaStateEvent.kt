@@ -1,5 +1,5 @@
 package xyz.ummo.bite.utils.eventBusClasses
 
-class reCaptchaStateEvent {
+class ReCaptchaStateEvent {
     var recaptchaPassed: Boolean? = null
 }

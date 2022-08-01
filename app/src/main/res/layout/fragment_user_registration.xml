@@ -21,7 +21,46 @@
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <RelativeLayout
+        android:id="@+id/signing_up_loader_relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible">
+
+        <!--<ImageView
+            android:id="@+id/no_services_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/ic_twotone_folder_open_24" />-->
+
+        <TextView
+            android:id="@+id/signing_up_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Signing you up..."
+            android:textAlignment="center"
+            android:textColor="@color/ummo_2"
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/signing_up_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:paddingTop="20dp" />
+
+    </RelativeLayout>
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/user_registration_nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -53,8 +92,8 @@
                 android:fontFamily="@font/alef"
                 android:text="@string/accountregistration"
                 android:textAppearance="@style/TextAppearance.UmmoBite.Title"
-                android:textSize="8sp" />
-
+                android:textSize="16sp"
+                tools:ignore="SmallSp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.UmmoBite.TextInputLayout"
@@ -66,14 +105,13 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="8"
                 app:counterTextColor="@color/textColorPrimary"
-                app:helperText="must contain 8 characters"
                 app:helperTextEnabled="true"
                 app:helperTextTextColor="@color/textColorPrimary"
                 app:startIconDrawable="@drawable/phone_icon"
                 app:startIconTint="@color/blueliketwitter">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/registration_momo_phone"
+                    android:id="@+id/user_registration_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
@@ -81,7 +119,6 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.UmmoBite.TextInputLayout"
@@ -109,16 +146,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
+                app:counterEnabled="true"
+                app:counterMaxLength="8"
                 android:textColorHint="@color/textColorPrimary"
                 app:endIconDrawable="@drawable/password_icon"
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/blueliketwitter"
                 app:errorEnabled="true"
+                app:helperText="Password must be 8 characters"
                 app:startIconDrawable="@drawable/ic_baseline_lock_24"
                 app:startIconTint="@color/blueliketwitter">
 
                 <com.google.android.material.textfield.TextInputEditText
-
                     android:id="@+id/registration_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,7 +172,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:hint="@string/hint_name"
-
                 android:textColorHint="@color/textColorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -152,7 +190,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_surname"
                 android:textColorHint="@color/textColorPrimary"
-
                 app:hintTextColor="@color/dim_gray">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -174,9 +211,7 @@
                     style="@style/TextAppearance.UmmoBite.justText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -188,11 +223,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
                     android:text="@string/continue_" />
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/login_option_relative_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -216,7 +251,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="8dp"
-                    android:layout_toRightOf="@+id/been_here_before_text"
+                    android:layout_toEndOf="@+id/been_here_before_text"
                     android:text="Log In" />
 
             </RelativeLayout>

@@ -12,13 +12,31 @@
     </style>
 
 
+    <style name="ShapeAppearanceOverlay.UmmoBite.TextInputLayout.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+    </style>
 
     <style name="Widget.UmmoBite.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.UmmoBite.TextInputLayout.HintText</item>
         <item name="hintTextColor">@color/textColorPrimary</item>
         <item name="android:paddingBottom">8dp</item>
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.UmmoBite.TextInputLayout.Rounded
+        </item>
         <item name="boxStrokeColor">@color/boxOutlineStartColor</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+
     </style>
+
+
+
+
+
+
+
+
 
     <style name="TextAppearance.UmmoBite.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -91,22 +109,33 @@
     </style>
     <style name="Widget.UmmoBite.Button.Fill" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>
+        <item name= "android:textAllCaps">false</item>
         <item name="backgroundTint">@color/blueliketwitter</item>
         <item name="android:buttonCornerRadius" tools:targetApi="p">10dp</item>
         <item name="android:stateListAnimator">
             @animator/button_state_list_animator
         </item>
+        <item name ="android:background">@drawable/round_corners_rectangle</item>
     </style>
 
-
+    <style name="Widget.UmmoBite.Button.Fill.White" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/blueliketwitter</item>
+        <item name= "android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:buttonCornerRadius" tools:targetApi="p">10dp</item>
+        <item name="android:stateListAnimator">
+            @animator/button_state_list_animator
+        </item>
+        <item name="android:background">@drawable/round_corners_rectangle_bluestroke</item>
+    </style>
 
     <style name="Widget.UmmoBite.Button.Fill.Socials" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>
         <item name="backgroundTint">@color/DarkGrey</item>
-        <item name="android:buttonCornerRadius" >50dp</item>
         <item name="android:stateListAnimator">
             @animator/button_state_list_animator
         </item>
+
     </style>
 
 

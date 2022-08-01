@@ -36,9 +36,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="32dp"
-            android:text="@string/log_in"
+            android:text="@string/login_asis"
             android:textAllCaps="true"
             android:fontFamily="@font/alef"
             android:textAppearance="@style/TextAppearance.UmmoBite.Title"
@@ -51,7 +51,6 @@
             style="@style/Widget.UmmoBite.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:textColorHint="@color/textColorPrimary"
             android:hint="@string/emailorphone">
 
@@ -73,6 +72,7 @@
             app:endIconDrawable="@drawable/visibility_off_24"
             app:startIconTint="@color/blueliketwitter"
             app:endIconTint="@color/blueliketwitter"
+
             android:textColorHint="@color/textColorPrimary"
             android:hint="@string/hint_password"
             app:errorEnabled="true">
@@ -109,7 +109,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/login_btn"
                 style="@style/Widget.UmmoBite.Button.Fill"
-             android:layout_width="match_parent"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="30dp"
@@ -147,7 +147,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="16dp">
-    <View
+ <!--   <View
         android:id="@+id/SplitLine_hor1"
         android:layout_width="match_parent"
         android:layout_height= "2dp"
@@ -156,7 +156,7 @@
         android:layout_marginTop="10dp"
 
         tools:ignore="MissingConstraints" />
-
+-->
     <ImageView
         android:id="@+id/OR_signup"
         android:layout_height="wrap_content"
@@ -171,24 +171,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <com.google.android.material.button.MaterialButton
-
-                android:id="@+id/use_socials_btn"
-                style="@style/Widget.UmmoBite.Button.Fill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="30dp"
-                android:text="@string/usesocialmedia"
-
-                android:padding="12dp"
-                android:textAlignment="center" />
-
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/facebook_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:drawableLeft="@drawable/com_facebook_button_icon"
+                android:text="@string/log_in_facebook"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+
+            android:backgroundTint="@color/DarkGrey"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     </FrameLayout>

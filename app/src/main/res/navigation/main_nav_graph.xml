@@ -26,15 +26,9 @@
             app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_signInFragment_to_mainscreen"
-            app:destination="@id/mainscreen" />
-        <action
-            android:id="@+id/action_signInFragment_to_logInWithSocials"
-            app:destination="@id/logInWithSocials"
+            app:destination="@id/mainscreen"
             app:popUpTo="@id/signInFragment"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"/>
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -256,20 +250,4 @@
         android:name="xyz.ummo.bite.signup.phoneauth.phoneAuthBottomSheet"
         android:label="fragment_phone_auth_bottom_sheet"
         tools:layout="@layout/fragment_phone_auth_bottom_sheet" />
-    <fragment
-        android:id="@+id/logInWithSocials"
-        android:name="xyz.ummo.bite.signup.LogInWithSocials"
-        android:label="fragment_log_in_with_socials"
-        tools:layout="@layout/fragment_log_in_with_socials" >
-        <action
-            android:id="@+id/action_logInWithSocials_to_signInFragment"
-            app:destination="@id/signInFragment"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/signInFragment"
-
-            />
-    </fragment>
 </navigation>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup.SignInFragment"
+    tools:context="ui.signup.SignInFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/loginPageBackgroundColor"
     >
@@ -56,6 +56,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/userEmailEditText"
                 android:layout_height="wrap_content"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
@@ -78,7 +79,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_edit_text"
+                android:id="@+id/userPasswordEditText"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
@@ -178,7 +179,7 @@
             android:layout_height="wrap_content">
 
             <com.facebook.login.widget.LoginButton
-                android:id="@+id/facebook_login_btn"
+                android:id="@+id/fbLoginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

@@ -26,7 +26,7 @@
     <string name="resetpassword">Reset \n Password</string>
     <string name="new_password">New Password</string>
     <string name="otp_prompt">A 6 digit pin has been sent to</string>
-    <string name ="login_google">Continue with Google</string>
+    <string name="login_google">Continue with Google</string>
 
     <!--  from ummo user -->
 
@@ -47,5 +47,11 @@
     <string name="phonenumber_supplied_error">wrong number</string>
     <string name="server_client_id">659740891716-jjaat66qsc0tgb0c4vj938343of4ln1t.apps.googleusercontent.com</string>
     <string name="login_asis">login</string>
+    <string name="google_SERVER_CLIENT_ID">659740891716-jjaat66qsc0tgb0c4vj938343of4ln1t.apps.googleusercontent.com</string>
+    <!-- Facebook String Resources -->
+    <string name="facebook_app_id">514661513810725</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">ade23f48417c936cff919b65441cab0f</string>
 
+    <string name="dev_server_url">https://bite-api-dev.herokuapp.com</string>
 </resources>

@@ -1,230 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup.UserRegistrationFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/loginPageBackgroundColor"
+    tools:context=".ui.signup.UserRegistrationFragment">
 
-    >
-
-<com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:elevation="0dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-
-    <androidx.appcompat.widget.Toolbar
-        style="@style/Widget.UmmoBite.Toolbar2"
-
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-        />
-</com.google.android.material.appbar.AppBarLayout>
-
-<androidx.core.widget.NestedScrollView
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:scrollbarAlwaysDrawVerticalTrack="true"
-android:layout_marginTop="56dp">
-
-
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingTop="16dp">
+        app:elevation="0dp">
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="@string/ummo_logo"
-            app:srcCompat="@drawable/ummo_logo" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar"
+            style="@style/Widget.UmmoBite.Toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/signing_up_loader_relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible">
+
+        <!--<ImageView
+            android:id="@+id/no_services_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/ic_twotone_folder_open_24" />-->
 
         <TextView
+            android:id="@+id/signing_up_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="32dp"
-            android:text="@string/accountregistration"
-            android:fontFamily="@font/alef"
-            android:textAppearance="@style/TextAppearance.UmmoBite.Title"
-            android:textSize="16sp" />
+            android:fontFamily="@font/rubik"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Signing you up..."
+            android:textAlignment="center"
+            android:textColor="@color/ummo_2"
+            android:textSize="18sp" />
 
+        <ProgressBar
+            android:id="@+id/signing_up_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:paddingTop="20dp" />
 
+    </RelativeLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/user_registration_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.UmmoBite.TextInputLayout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:counterTextColor="@color/textColorPrimary"
-            app:counterMaxLength="8"
-            app:helperTextEnabled="true"
-            app:helperTextTextColor="@color/textColorPrimary"
-            app:helperText="must contain 8 characters"
-            app:startIconDrawable="@drawable/phone_icon"
-            app:startIconTint="@color/blueliketwitter"
-            android:textColorHint="@color/textColorPrimary"
-            android:hint="@string/hint_contact">
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="8dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:id="@+id/registration_momo_phone"
-                android:inputType="phone"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.UmmoBite.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/at_email_logo"
-            app:startIconTint="@color/blueliketwitter"
-            android:textColorHint="@color/textColorPrimary"
-            android:hint="@string/email_address">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:id="@+id/registration_email_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
- android:id="@+id/password_textinput"
-            style="@style/Widget.UmmoBite.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/textColorPrimary"
-            android:hint="@string/hint_password"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
-            app:endIconDrawable="@drawable/password_icon"
-            app:endIconMode="password_toggle"
-            app:endIconTint="@color/blueliketwitter"
-            app:startIconTint="@color/blueliketwitter"
-            app:errorEnabled="true">
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:id="@+id/registration_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.UmmoBite.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/textColorPrimary"
-            android:hint="@string/hint_name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/registration_name"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textCapSentences"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.UmmoBite.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:textColorHint="@color/textColorPrimary"
-
-            android:hint="@string/hint_surname">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/registration_surname"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:inputType="textCapSentences"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:contentDescription="@string/ummo_logo"
+                app:srcCompat="@drawable/ummo_logo" />
 
             <TextView
-                style="@style/TextAppearance.UmmoBite.justText"
-                android:id="@+id/legalTerms"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/submit_btn"
-                style="@style/Widget.UmmoBite.Button.Fill"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="@string/continue_"
-                 />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-
-            <TextView
-                android:id="@+id/been_here_before_text"
-                style="@style/TextAppearance.UmmoBite.justText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="32dp"
-                android:text="@string/been_here_before" />
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/alef"
+                android:text="@string/accountregistration"
+                android:textAppearance="@style/TextAppearance.UmmoBite.Title"
+                android:textSize="16sp"
+                tools:ignore="SmallSp" />
 
-            <TextView
-                android:id="@+id/log_in_text"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.UmmoBite.TextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="16dp"
-                android:layout_toRightOf="@+id/been_here_before_text"
-                android:text="Log In"
-                style="@style/TextAppearance.UmmoBite.justText_different" />
+                android:layout_marginBottom="8dp"
+                android:hint="@string/hint_contact"
+                android:textColorHint="@color/textColorPrimary"
+                app:counterEnabled="true"
+                app:counterMaxLength="8"
+                app:counterTextColor="@color/textColorPrimary"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/textColorPrimary"
+                app:startIconDrawable="@drawable/phone_icon"
+                app:startIconTint="@color/blueliketwitter">
 
-        </RelativeLayout>
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/user_registration_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.core.widget.NestedScrollView>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.UmmoBite.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/email_address"
+                android:textColorHint="@color/textColorPrimary"
+                app:startIconDrawable="@drawable/at_email_logo"
+                app:startIconTint="@color/blueliketwitter">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_email_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_textinput"
+                style="@style/Widget.UmmoBite.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                app:counterEnabled="true"
+                app:counterMaxLength="8"
+                android:textColorHint="@color/textColorPrimary"
+                app:endIconDrawable="@drawable/password_icon"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/blueliketwitter"
+                app:errorEnabled="true"
+                app:helperText="Password must be 8 characters"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                app:startIconTint="@color/blueliketwitter">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.UmmoBite.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/hint_name"
+                android:textColorHint="@color/textColorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.UmmoBite.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_surname"
+                android:textColorHint="@color/textColorPrimary"
+                app:hintTextColor="@color/dim_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/legalTerms"
+                    style="@style/TextAppearance.UmmoBite.justText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submit_btn"
+                    style="@style/Widget.UmmoBite.Button.Fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/continue_" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/login_option_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/been_here_before_text"
+                    style="@style/TextAppearance.UmmoBite.justText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="32dp"
+                    android:text="@string/been_here_before"
+                    android:textColor="#666" />
+
+                <TextView
+                    android:id="@+id/log_in_text"
+                    style="@style/TextAppearance.UmmoBite.justText_different"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/been_here_before_text"
+                    android:text="Log In" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>
